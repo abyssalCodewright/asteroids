@@ -31,6 +31,10 @@ def main():
         screen.fill('black')
         for member in drawable_group:
             member.draw(screen)
+        for member in asteroids_group:
+            if member.collision(player):
+                print("Game over!")
+                return
         pygame.display.flip()
 
         dt = clock.tick(60) / 1000
