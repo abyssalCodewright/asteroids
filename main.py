@@ -40,7 +40,8 @@ def main():
                 return
             for shot in shot_group:
                 if member.collision(shot):
-                    member.kill()
+                    member.split()
+                    shot.kill()
         pygame.display.flip()
 
         dt = clock.tick(60) / 1000
