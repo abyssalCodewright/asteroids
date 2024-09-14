@@ -38,6 +38,9 @@ def main():
             if member.collision(player):
                 print("Game over!")
                 return
+            for shot in shot_group:
+                if member.collision(shot):
+                    member.kill()
         pygame.display.flip()
 
         dt = clock.tick(60) / 1000
